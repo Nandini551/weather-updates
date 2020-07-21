@@ -108,6 +108,7 @@ header
 		width:96%;
 		display: flex;
 		flex-wrap: wrap;
+		color:black;
 	}
 	.img
 	{
