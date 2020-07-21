@@ -92,29 +92,40 @@ header
 {
 	.card
 	{
-		display: flex;
-		flex-wrap: wrap;
-		flex-direction: column;
-		width:96%;
+		width: 80%;
+   	 	margin: 0 auto;
+    		padding-bottom: 20px;
+    		position: relative;
+    		display: flex;
+    		flex-wrap: wrap;
+    		height:50%;
 	}
 	.info
 	{
-		width:96%;
-		display: flex;
-		flex-wrap: wrap;
+		display: table-cell;
+    		padding: 25px;
+    		vertical-align: top;
+    		width: 40%;
+    		display: flex;
+    		flex-wrap: wrap;
 	}
 	.coord
 	{
-		width:96%;
-		display: flex;
-		flex-wrap: wrap;
-		color:black;
+		display: table-cell;
+    		padding: 25px;
+    		vertical-align: top;
+    		width: 40%;
+    		display: flex;
+    		flex-wrap: wrap;
 	}
 	.img
 	{
-		width:96%;
-		display: flex;
-		flex-wrap: wrap;
+		display: table-cell;
+    		padding: 25px;
+    		vertical-align: top;
+    		width: 50%;
+    		display: flex;
+    		flex-wrap: wrap;
 	}
 	.details
 	{
