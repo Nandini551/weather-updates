@@ -1,0 +1,129 @@
+body
+{
+	background-color: #AFEEEE;
+	background-repeat: no-repeat;
+	max-width: 100%;
+	background-size:cover; 
+}
+li
+{
+	padding:20px;
+}
+.title
+{
+	font-size: 40px;
+	margin-left:15px;
+	color:black;
+	font-family:  Arial, Helvetica, sans-serif;
+
+}
+
+header
+{
+	text-align:center;
+	font-size: 50px;
+	font-family:  Arial, Helvetica, sans-serif;
+	text-shadow:2px 2px 4px #0000FF;
+	box-shadow: 0px 4px 8px 0px #008B8B;
+	padding: 25px;
+	margin:15px 0 15px 0;
+	background-color: #6495ED;
+	border-bottom: 3px solid black;
+	border-top: 1px solid black;
+}
+.card
+{
+	height: 270px;
+	width:80%;
+	margin-left: 110px;
+	margin-top: 25px;
+	padding: 10px;
+	display:flex;
+	flex-wrap:wrap;
+	background-color:#483D8B;
+	
+}
+.info
+{
+	font-size: 30px;
+	color: white;
+	list-style-type: none;
+	padding:30px;
+
+}
+.coord
+{
+	font-size: 20px;
+	color: white;
+	padding:30px;
+	list-style-type: square;
+}
+.img
+{
+	margin:30px 0px 0 50px ;
+	border:1px solid black;
+	height: 200px;
+	width: 200px;
+}
+.details
+{
+	display: flex;
+	flex-wrap:wrap;
+	font-size: 20px;
+	padding:20px;
+	
+}
+.style
+{
+	width: 45%;
+	padding:1%;
+	margin:1%;
+	float:left;
+	flex-wrap:wrap;
+	background-color: #87CEFA;
+	list-style-type: none;
+	color: #000080;
+	font-family: 'Poppins',sans-serif;
+	border-top: 1px double black;
+	border-radius: 2%;
+	
+}
+@media only screen and (max-width: 600px)
+{
+	.card
+	{
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: column;
+		width:96%;
+	}
+	.info
+	{
+		width:96%;
+		display: flex;
+		flex-wrap: wrap;
+	}
+	.coord
+	{
+		width:96%;
+		display: flex;
+		flex-wrap: wrap;
+	}
+	.img
+	{
+		width:96%;
+		display: flex;
+		flex-wrap: wrap;
+	}
+	.details
+	{
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: column;
+	}
+	.style
+	{
+		width:96%;
+	}
+   
+}

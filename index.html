@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	 <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Weather Forecast</title>
+</head>
+<body>
+	<script type="text/javascript">
+		fetch('http://api.openweathermap.org/data/2.5/weather?q=London&APPID=31992332d399840164fdbda415e12201&units=metric').then((response)=>
+		{
+			return response.json();
+		})
+		.then(function(data) 
+			{		//header
+					 var body= document.body;
+    				var header=document.createElement("header");
+   					 header.textContent="Weather Forecast For Different Cities";
+   					 body.appendChild(header);
+
+
+   					 //card	
+   					var card=document.createElement("div");	
+    				card.classList.add("card");
+
+    				//name of the city,country
+    				var info=document.createElement("ul")
+    				info.classList.add("info");
+    				card.append(info);	
+    				var li=document.createElement("li");
+    				li.innerHTML ="Name of the City: "+data.name ;
+    				info.appendChild(li);
+    				var li=document.createElement("li");
+    				li.innerHTML ="Name of the country: "+data.sys.country;
+    				info.appendChild(li);
+    				
+    				//cordinates
+    				var coord=document.createElement("ul")
+    				coord.classList.add("coord");
+    				coord.textContent="Coordinates:";
+    				card.append(coord);	
+    				var li=document.createElement("li");
+    				li.innerHTML ="Longitude: "+data.coord.lon ;
+    				coord.appendChild(li);
+    				var li=document.createElement("li");
+    				li.innerHTML ="Latitude: "+data.coord.lat;
+    				coord.appendChild(li);
+    				//image
+    				var img = document.createElement("img");
+    				img.classList.add("img");
+    				img.setAttribute("src",'image2.jpg');
+    				card.append(img);
+    				
+   					body.appendChild(card);
+
+
+
+    				//details
+
+
+    				var details=document.createElement("p");
+    				details.classList.add("details");
+    				body.append(details);
+
+    				//weather
+    				var weather=document.createElement("ul")
+    				weather.classList.add("style");
+    				var title=document.createElement("p");
+    				title.classList.add("title");
+    				title.textContent="WEATHER:-";
+    				weather.append(title);
+    				details.append(weather);
+    				
+
+    				//base
+    				
+
+    				var li=document.createElement("li");
+    				li.innerHTML ="Base: "+data.base;
+    				weather.appendChild(li);
+
+    				
+
+    				//temp,pressure,humidity
+
+    				
+    				var li=document.createElement("li");
+    				li.innerHTML ="Temperature: "+data.main.temp+" degree Celcius";
+    				weather.appendChild(li);
+    				var li=document.createElement("li");
+    				li.innerHTML ="Feels Like:"+data.main.feels_like+" degree Celcius";
+    				weather.appendChild(li);
+    				var li=document.createElement("li");
+    				li.innerHTML ="Minimum Temperature: "+data.main.temp_min+" degree Celcius";
+    				weather.appendChild(li);
+    				var li=document.createElement("li");
+    				li.innerHTML ="Maximum Temperature:"+data.main.temp_max+" degree Celcius";
+    				weather.appendChild(li);
+    				var li=document.createElement("li");
+    				li.innerHTML ="Pressure:"+data.main.pressure+"hPa";
+    				weather.appendChild(li);
+    				var li=document.createElement("li");
+    				li.innerHTML ="Humidity:"+data.main.humidity+"%";
+    				weather.appendChild(li);
+
+    				//wind
+
+    				var wc=document.createElement("div");
+    				wc.classList.add("style");
+    				details.append(wc);
+    				details.append(wc);
+    				var wind=document.createElement("ul")
+    				var titlewind=document.createElement("p");
+    				titlewind.classList.add("title");
+    				titlewind.textContent="WIND:-";
+    				wind.append(titlewind);
+    				
+    				wc.append(wind);
+    				
+    				var li=document.createElement("li");
+    				li.innerHTML ="Speed: "+data.wind.speed+" meter/sec";
+    				wind.appendChild(li);
+    				var li=document.createElement("li");
+    				li.innerHTML ="Degree:"+data.wind.deg+" degrees";
+    				wind.appendChild(li);
+
+    				//clouds
+
+    				var clouds=document.createElement("ul")
+    				var titleclouds=document.createElement("p");
+    				titleclouds.classList.add("title");
+    				titleclouds.textContent="CLOUDS:-";
+    				clouds.append(titleclouds);
+    				
+    				wc.append(clouds);
+    				
+    				var li=document.createElement("li");
+    				li.innerHTML ="All: "+data.clouds.all+" %" ;
+    				clouds.appendChild(li);
+
+
+
+    				var sys=document.createElement("ul")
+    				sys.classList.add("style")
+    				details.append(sys);
+
+    				//sunrise sunset
+
+    				var sr=document.createElement("p");
+    				sr.textContent="Sunrise: ";
+    				sr.append(data.sys.sunrise);
+    			    sys.append(sr);
+    			    var ss=document.createElement("hPa");
+    				ss.textContent="Sunset: ";
+    				ss.append(data.sys.sunset);
+    			    sys.append(ss);
+
+    				//timezone
+    				var tz=document.createElement("p");
+    				tz.textContent="TimeZone: ";
+    				tz.append(data.timezone);
+    			    sys.append(tz);
+
+
+    				
+
+
+
+
+    				
+});
+	</script>
+
+</body>
+</html>
